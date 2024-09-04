@@ -1,0 +1,14 @@
+{
+  "name": "native-iap-frontend",
+  "version": "1.0.0",
+  "description": "Sdk for IAP",
+  "main": "main.js",
+  "runtime-resource": {
+    "path": "scripts",
+    "name": "scripts"
+  },
+  "main-menu": {},
+  "dependencies": {
+    "typescript-collections": "^1.3.3"
+  }
+}

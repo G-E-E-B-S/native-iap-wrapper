@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+import org.apache.tools.ant.taskdefs.condition.Os
+
+android {
+    compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
+    buildToolsVersion PROP_BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion PROP_MIN_SDK_VERSION
+        targetSdkVersion PROP_TARGET_SDK_VERSION
+        versionCode 1
+        versionName "1.0"
+
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets.main {
+        manifest.srcFile "src/main/AndroidManifest.xml"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+//    api fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+    api 'com.android.billingclient:billing:5.1.0'
+    implementation "androidx.annotation:annotation:1.5.0"
+    implementation "com.google.guava:guava:31.1-android"
+}
